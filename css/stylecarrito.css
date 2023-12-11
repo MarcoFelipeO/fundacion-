@@ -1,0 +1,36 @@
+.foto1{
+    width:400px;
+
+}
+
+.carrito{
+    color: white;
+    text-align: left;
+    font-size: 35px;
+}
+
+.hola{
+    width: 200px;
+    columns: 200px;
+}
+
+.carrito2{
+    color: white;
+    text-align: left;
+    font-size: 25px;
+
+}
+
+
+.carritofoto{
+    border-radius: 500px;
+    width: 80px;
+}
+
+
+.fondocarrito{
+   background: white;
+   padding: 20px;
+
+
+}

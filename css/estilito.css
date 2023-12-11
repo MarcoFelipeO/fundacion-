@@ -1,0 +1,86 @@
+h1 {
+    font-family: "Gotham Medium";
+    color: #175e93;
+    font-size: 35px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+
+.uno{
+    font-family: "";
+    color: black;
+   text-align: left;
+    font-size: 17px;
+   
+}
+
+.dos{
+    font-size: 19px;
+    color: black;
+    text-align: center"
+    
+    
+}
+
+.fotologo{
+    text-align: center;
+}
+
+
+
+.fondo2{
+    
+background-image: url(../img/fondomascota.jpg);
+width: 100%;
+padding: 20px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+
+
+}
+
+.fondo3{
+    background: cornflowerblue;
+width: 100%;
+padding: 20px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+}
+
+
+
+
+
+.izi{
+    color:#175e93;
+}
+
+.izipizi{
+    color:white;
+}
+
+.botonpagar{
+    border-radius:3000px;
+}
+
+
+img2 {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Asegura que la imagen esté detrás del texto */
+}
+  
+
+.fotoperro{
+    width: 800px;
+}
+  

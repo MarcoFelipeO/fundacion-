@@ -33,7 +33,7 @@ if (!$resultado_comuna) {
 
 <html>
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es">
 
 
 <head>

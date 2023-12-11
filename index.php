@@ -14,7 +14,7 @@ require_once "PHP/coneccion.php";
 <head>
     <meta charset="utf-8">
     <title>Fundación Adopta No Compres </title >
-    <meta content="width=device-width, initial-scale=1.0" name=" viewport" >
+    <meta content="width=device-width, initial-scale=1.0" name=" viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
@@ -57,13 +57,13 @@ require_once "PHP/coneccion.php";
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <small class="far fa-clock text-primary me-2"></small>
-                    <small class="izipizi">Atención: Lunes a Viernes 9:00 a 18:00 hrs  </small>
+                    <small class="izipizi">Atención: Lunes a Viernes 9:00 a 18:00 hrs</small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small><a href="tel:+56911111111">Si quieres llamarnos +569 1111 11XX </a> </small>
+                    <small><a href="tel:+56911111111">Si quieres llamarnos +569 1111 11XX</a> </small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center mx-n2">
                     <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>

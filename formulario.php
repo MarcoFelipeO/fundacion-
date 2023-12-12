@@ -299,11 +299,10 @@ if (!$resultado_comuna) {
             <label for="posee_mascotas">Posee mas mascotas?</label>
             <textarea class="form-control" id="posee_mascotas" name="posee_mascotas" rows="4"></textarea>
         </div>
-
-        <br>
-
+        
+        
         <!--boton de enviar-->
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary"> Enviar </button>
         <!--boton de enviar-->
 
 

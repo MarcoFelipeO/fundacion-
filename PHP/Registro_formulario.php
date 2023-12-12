@@ -27,7 +27,7 @@ if (empty($rut) || empty($nombres) || empty($apellido_paterno) || empty($apellid
     echo '
         <script>
             alert("Todos los campos son obligatorios. Por favor, complete todos los campos e inténtelo de nuevo.");
-            
+            window.location = "../formulario.php"; 
         </script>
     ';
     exit();

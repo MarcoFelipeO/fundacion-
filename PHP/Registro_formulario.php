@@ -8,7 +8,7 @@ $apellido_paterno = $_POST['apellido_paterno'];
 $apellido_materno = $_POST['apellido_materno'];
 $email = $_POST['email'];
 $direccion = $_POST['direccion'];
-$comuna = $_POST['comuna'];
+//$comuna = $_POST['comuna'];
 $fono = $_POST['fono'];
 $nacionalidad = $_POST['nacionalidad'];
 $edad = $_POST['edad'];
@@ -19,10 +19,11 @@ $esterilizacion = $_POST['esterilizacion'];
 $ingreso_economico = $_POST['ingreso_economico'];
 $posee_mascotas = $_POST['posee_mascotas'];
 $id_region = $_POST['id_region'];
+$id_comuna = $_POST['id_comuna']; // error en signo peso $
 
 
 // Validar campos obligatorios
-if (empty($rut) || empty($nombres) || empty($apellido_paterno) || empty($apellido_materno) || empty($email) || empty($direccion) || empty($comuna) || empty($fono) || empty($nacionalidad) || empty($edad) || empty($domicilio) || empty($refugiado) || empty($razon) || empty($esterilizacion) || empty($ingreso_economico)  || empty($id_region) ){
+if (empty($rut) || empty($nombres) || empty($apellido_paterno) || empty($apellido_materno) || empty($email) || empty($direccion) || empty($fono) || empty($nacionalidad) || empty($edad) || empty($domicilio) || empty($refugiado) || empty($razon) || empty($esterilizacion) || empty($ingreso_economico)  || empty($id_region) || empty($id_comuna)){
     
     echo '
         <script>
@@ -81,7 +82,7 @@ if (!is_numeric($edad) || $edad < 18) {
 
 
 // Crear consulta preparada
-$query = "INSERT INTO formulario (rut,nombres, apellido_paterno, apellido_materno, email, direccion, comuna, fono,nacionalidad,edad,domicilio,refugiado,razon,esterilizacion,ingreso_economico,posee_mascotas,id_region) 
+$query = "INSERT INTO formulario (rut,nombres, apellido_paterno, apellido_materno, email, direccion, fono,nacionalidad,edad,domicilio,refugiado,razon,esterilizacion,ingreso_economico,posee_mascotas,id_region,id_comuna) 
         VALUES (?,? ,?, ? ,? , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; // 17
 
 $insertar_formulario = mysqli_prepare($coneccion, $query);
@@ -92,7 +93,7 @@ if (!$insertar_formulario) {
 }
 
 // Vincular parámetros
-mysqli_stmt_bind_param($insertar_formulario, "sssssssssssssssss", $rut, $nombres, $apellido_paterno, $apellido_materno, $email, $direccion, $comuna, $fono, $nacionalidad, $edad, $domicilio, $refugiado, $razon, $esterilizacion, $ingreso_economico, $posee_mascotas, $id_region);
+mysqli_stmt_bind_param($insertar_formulario, "sssssssssssssssss", $rut, $nombres, $apellido_paterno, $apellido_materno, $email, $direccion, $fono, $nacionalidad, $edad, $domicilio, $refugiado, $razon, $esterilizacion, $ingreso_economico, $posee_mascotas, $id_region, $id_comuna);
 
 // Ejecutar la consulta
 $ejecutar = mysqli_stmt_execute($insertar_formulario);

@@ -206,10 +206,13 @@ if (!$resultado_comuna) {
                     <input type="text" class="form-control" id="direccion" name="direccion" required>
                 </div>
 
+    <!--
                 <div class="form-group">
                     <label for="comuna">Comuna:</label>
                     <input type="text" class="form-control" id="comuna" name="comuna" required>
                 </div>
+    -->
+
             </div>
         </div>
 
@@ -233,7 +236,7 @@ if (!$resultado_comuna) {
 
         <!-- Selector de Comuna -->
         <div class="form-group">
-            <label for="id_comuna">Comuna:</label>
+            <label for="comuna">Comuna:</label>
             <select class="form-control" id="id_comuna" name="id_comuna" required>
                 <?php
                     // Asegúrate de que $resultado_comuna tenga resultados

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-12-2023 a las 03:11:53
+-- Tiempo de generación: 13-12-2023 a las 04:17:22
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -95,19 +95,17 @@ CREATE TABLE `formulario` (
   `esterilizacion` varchar(200) NOT NULL,
   `ingreso_economico` int(10) NOT NULL,
   `posee_mascotas` longtext NOT NULL,
-  `id_region` int(11) DEFAULT NULL
+  `id_region` int(11) DEFAULT NULL,
+  `id_comuna` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `formulario`
 --
 
-INSERT INTO `formulario` (`formulario_id`, `rut`, `nombres`, `apellido_paterno`, `apellido_materno`, `email`, `direccion`, `comuna`, `fono`, `nacionalidad`, `edad`, `domicilio`, `refugiado`, `razon`, `esterilizacion`, `ingreso_economico`, `posee_mascotas`, `id_region`) VALUES
-(7, '19856453-2', 'Ivanna', 'Guzman', 'Moncada', 'ivanna.guzman@inacapmail.cl', 'ejercito', 'puente alto', 123456789, 'chilena', 25, 'si', 'bonnie', 'tengo el espacio y ganas me gusta bonnie', 'si estoy dispuesto', 150000, 'si un gato', NULL),
-(8, '19859532-2', 'marco', 'oella', 'aslasfka', 'marco@gmail.com', 'luismatte', 'as', 987890490, 'chile', 25, 'si', 'sadas', 'assa', 'sadsad', 0, 'sadasda', NULL),
-(9, '12345678-9', 'testmarco', 'marcotest', 'marcotesting', 'marcotest@gmail.com', 'luismatte', 'puente alto', 912345678, 'chilena', 25, 'si', 'bonnietest', 'testbonnie', 'hola123', 0, 'nop', NULL),
-(10, '89784595-2', 'sad', 'safsa', 'fsadsa', 'asdasasahh@gmail.com', 'safsa', 'safsafsa', 964789430, 'sadsa', 23, 'si', 'asdsad', 'SADSA', 'SDAsaasda', 23232, 'sadsadsa', 1),
-(11, '19756743-2', 'kjashjahd', 'skajdhkjas', 'djhdakjahkdja', 'asdasasahh@gmail.com', 'adnaksd', 'kjsndakjdkja', 345654326, 'chhsajdhkjas', 33, 'si', 'asmn dmnas dm a', 'asdjahsbdkabd', 'kjsdkajbdkasb', 32323, 'asbdkasbdkajkda', 1);
+INSERT INTO `formulario` (`formulario_id`, `rut`, `nombres`, `apellido_paterno`, `apellido_materno`, `email`, `direccion`, `comuna`, `fono`, `nacionalidad`, `edad`, `domicilio`, `refugiado`, `razon`, `esterilizacion`, `ingreso_economico`, `posee_mascotas`, `id_region`, `id_comuna`) VALUES
+(7, '19856453-2', 'Ivanna', 'Guzman', 'Moncada', 'ivanna.guzman@inacapmail.cl', 'ejercito', 'puente alto', 123456789, 'chilena', 25, 'si', 'bonnie', 'tengo el espacio y ganas me gusta bonnie', 'si estoy dispuesto', 150000, 'si un gato', NULL, NULL),
+(15, '89784595-2', 'aasdsa', 'asd', 'adsadasdasd', 'asdasasahh@gmail.com', 'sadasd', '', 123456789, 'sad', 32, 'si', 'asdas', 'dsad', 'dsada', 22332, 'dasdsaf', 7, 5);
 
 -- --------------------------------------------------------
 
@@ -232,7 +230,8 @@ ALTER TABLE `comuna`
 --
 ALTER TABLE `formulario`
   ADD PRIMARY KEY (`formulario_id`),
-  ADD KEY `id_region` (`id_region`);
+  ADD KEY `id_region` (`id_region`),
+  ADD KEY `id_comuna` (`id_comuna`);
 
 --
 -- Indices de la tabla `mascotas`
@@ -272,7 +271,7 @@ ALTER TABLE `comuna`
 -- AUTO_INCREMENT de la tabla `formulario`
 --
 ALTER TABLE `formulario`
-  MODIFY `formulario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `formulario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `mascotas`
@@ -306,7 +305,8 @@ ALTER TABLE `comuna`
 -- Filtros para la tabla `formulario`
 --
 ALTER TABLE `formulario`
-  ADD CONSTRAINT `formulario_ibfk_1` FOREIGN KEY (`id_region`) REFERENCES `region` (`id_region`);
+  ADD CONSTRAINT `formulario_ibfk_1` FOREIGN KEY (`id_region`) REFERENCES `region` (`id_region`),
+  ADD CONSTRAINT `id_comuna` FOREIGN KEY (`id_comuna`) REFERENCES `comuna` (`id_comuna`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

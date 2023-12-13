@@ -152,17 +152,15 @@ if (!$resultado_comuna) {
 <!----- AQUI ESTA EL FORMULARIO DE ADOPCION HTML ---------><!----- AQUI ESTA EL FORMULARIO DE ADOPCION HTML --------->
 
 <div class="container">
-
-<br>
+    <br>
     <center><h1 class="tituloformulario">Registro de Nuestras Mascotas Rescatadas</h1></center>
-<br>
+    <br>
     <form action="PHP/Registro_formulario.php" id="registro" method="POST" class="formulario__">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="rut">Rut:</label>
-                    <input type="text" class="form-control" id="rut" name="rut"
-                        placeholder="Digite su Rut sin puntos y con guion." required>
+                    <input type="text" class="form-control" id="rut" name="rut" placeholder="Digite su Rut sin puntos y con guion." required>
                 </div>
 
                 <div class="form-group">
@@ -182,8 +180,7 @@ if (!$resultado_comuna) {
 
                 <div class="form-group">
                     <label for="email">Correo Electrónico:</label>
-                    <input type="email" class="form-control" id="email" name="email"
-                    placeholder="Escriba un correo electrónico válido" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Escriba un correo electrónico válido" required>
                 </div>
             </div>
 
@@ -191,8 +188,7 @@ if (!$resultado_comuna) {
 
                 <div class="form-group">
                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" class="form-control" id="telefono" name="fono" 
-                    placeholder="Escriba un celular de 9 dígitos" required>
+                    <input type="tel" class="form-control" id="telefono" name="fono" placeholder="Escriba un celular de 9 dígitos" required>
                 </div>
 
                 <div class="form-group">
@@ -214,58 +210,47 @@ if (!$resultado_comuna) {
                     <label for="comuna">Comuna:</label>
                     <input type="text" class="form-control" id="comuna" name="comuna" required>
                 </div>
-
             </div>
-
-
-                        <!-- Selector de region -->
-
-            <div class="form-group">
-                <label for="region">Region:</label>
-                    <select class="form-control" id="id_region" name="id_region" required>
-                            <?php
-                                // Asegúrate de que $resultado_region tenga resultados
-                                if ($resultado_region) {
-                                    while ($row = mysqli_fetch_assoc($resultado_region)) {
-                                        echo "<option value='" . $row['id_region'] . "'>" . $row['nombre_region'] . "</option>";
-                                    }
-                                } else {
-                                    echo "<option value=''>No hay regiones disponibles</option>";
-                                }
-                            ?>
-                    </select>
-            </div>
-
-                         <!-- Selector de region -->
-
-
-
-
-                        <!-- Selector de Comuna --> 
-
-                        <div class="form-group">
-                        <label for="id_comuna">Comuna:</label>
-                        <select class="form-control" id="id_comuna" name="id_comuna" required>
-
-                                <?php
-                                    // Asegúrate de que $resultado_region tenga resultados
-                                    if ($resultado_comuna) {
-                                        while ($row = mysqli_fetch_assoc($resultado_comuna)) {
-                                            echo "<option value='" . $row['id_comuna'] . "'>" . $row['nombre_comuna'] . "</option>";
-                                        }
-                                    } else {
-                                        echo "<option value=''>No hay comunas disponibles</option>";
-                                    }
-                                ?>
-
-
-                        </select>
-
-                        <!-- Selector de Comuna -->
-
-                                   
-
         </div>
+
+        <!-- Selector de region -->
+        <div class="form-group">
+            <label for="region">Region:</label>
+            <select class="form-control" id="id_region" name="id_region" required>
+                <?php
+                    // Asegúrate de que $resultado_region tenga resultados
+                    if ($resultado_region) {
+                        while ($row = mysqli_fetch_assoc($resultado_region)) {
+                            echo "<option value='" . $row['id_region'] . "'>" . $row['nombre_region'] . "</option>";
+                        }
+                    } else {
+                        echo "<option value=''>No hay regiones disponibles</option>";
+                    }
+                ?>
+            </select>
+        </div>
+        <!-- Fin Selector de region -->
+
+        <!-- Selector de Comuna -->
+        <div class="form-group">
+            <label for="id_comuna">Comuna:</label>
+            <select class="form-control" id="id_comuna" name="id_comuna" required>
+                <?php
+                    // Asegúrate de que $resultado_comuna tenga resultados
+                    if ($resultado_comuna) {
+                        while ($row = mysqli_fetch_assoc($resultado_comuna)) {
+                            echo "<option value='" . $row['id_comuna'] . "'>" . $row['nombre_comuna'] . "</option>";
+                        }
+                    } else {
+                        echo "<option value=''>No hay comunas disponibles</option>";
+                    }
+                ?>
+            </select>
+        </div>
+        <!-- Fin Selector de Comuna -->
+
+        <!-- Otras entradas de texto y selectores -->
+
         <div class="form-group">
             <label for="domicilio">¿Cuenta con domicilio propio?:</label>
             <select class="form-control" id="domicilio" name="domicilio">
@@ -285,8 +270,7 @@ if (!$resultado_comuna) {
         </div>
 
         <div class="form-group">
-            <label for="esterilizar">¿Está dispuesto a esterilizarlo/a y mantener su calendario de vacunas al
-                día?:</label>
+            <label for="esterilizar">¿Está dispuesto a esterilizarlo/a y mantener su calendario de vacunas al día?:</label>
             <textarea class="form-control" id="esterilizar" name="esterilizacion" rows="4"></textarea>
         </div>
 
@@ -296,18 +280,16 @@ if (!$resultado_comuna) {
         </div>
 
         <div class="form-group">
-            <label for="posee_mascotas">Posee mas mascotas?</label>
+            <label for="posee_mascotas">Posee más mascotas?</label>
             <textarea class="form-control" id="posee_mascotas" name="posee_mascotas" rows="4"></textarea>
         </div>
-        
-        
-        <!--boton de enviar-->
-        <button type="submit" class="btn btn-primary"> Enviar </button>
-        <!--boton de enviar-->
-
+                    <br>
+        <!-- Boton de enviar -->
+        <button type="submit" class="btn btn-primary" >Enviar</button>
 
     </form>
 </div>
+
 
 <!----- AQUI ESTA EL FORMULARIO DE ADOPCION HTML ---------><!----- AQUI ESTA EL FORMULARIO DE ADOPCION HTML --------->
 <!----- AQUI ESTA EL FORMULARIO DE ADOPCION HTML ---------><!----- AQUI ESTA EL FORMULARIO DE ADOPCION HTML --------->
